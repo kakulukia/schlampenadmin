@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+
+[dev-packages]
+django-debug-toolbar = "*"
+django-livereload-server = "*"
+flake8 = "*"
+Fabric3 = "*"
+
+[packages]
+ipdb = "*"
+ipython = "*"
+Django = "*"
+pypugjs = "*"
+django-secrets = "*"
+django-undeletable = "*"
+django-extensions = "*"
+dj-static = "*"
+django_compressor = "*"
+django-axes = "*"
+django-libsass = "*"
+raven = "*"

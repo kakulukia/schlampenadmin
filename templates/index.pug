@@ -1,0 +1,26 @@
+extends 'base.pug'
+-load static compress
+
+block title
+  | Hello Django
+
+block content
+  .hello-world Hello&nbsp;
+    span(v-text='who')
+    | !
+
+block footer
+  .container
+    input#who(v-model='who')
+    |  is awesome!
+
+
+block extra_js
+  script.
+    app = new Vue({
+      el: '#app',
+      data: {
+        who: "Django"
+      }
+    });
+    $('#who').focus();
