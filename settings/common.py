@@ -20,7 +20,7 @@ SECRET_KEY = secrets.SECRET_KEY
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'admin.schwingschlampen.de',
+    'admin.swingschlampen.de',
 ]
 AUTH_USER_MODEL = 'users.User'
 
