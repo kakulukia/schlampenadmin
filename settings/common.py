@@ -29,6 +29,11 @@ AUTH_USER_MODEL = 'users.User'
 INSTALLED_APPS = [
     # our own stuff
     'users',
+    'swing_admin',
+
+    # custom admin
+    'jet.dashboard',
+    'jet',
 
     # Django
     'django.contrib.admin',
@@ -43,17 +48,21 @@ INSTALLED_APPS = [
 
     # 3rd party apps
     'axes',
+    'froala_editor',
+    'corsheaders',
     'compressor',
     'django_extensions',
     'django_secrets',
     'livereload',
     'raven.contrib.django.raven_compat',
+    'rest_framework',
 ]
 
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -152,3 +161,25 @@ RAVEN_CONFIG = {
     'dsn': 'https://{}@sentry.io/{}'.format(secrets.SENTRY_PROJECT_KEY, secrets.SENTRY_PROJECT_ID),
     'release': raven.fetch_git_sha(os.path.dirname(os.pardir)),
 }
+
+FROALA_EDITOR_PLUGINS = (
+    'align',
+    'draggable',
+    'emoticons',
+    'image_manager',
+    'image',
+    'line_breaker',
+    'link',
+    'lists',
+    'url',
+)
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly'
+    ]
+}
+
+CORS_ORIGIN_ALLOW_ALL = True

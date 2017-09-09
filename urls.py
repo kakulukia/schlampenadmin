@@ -16,12 +16,24 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls import url, include
 from django.contrib import admin
+from rest_framework.routers import DefaultRouter
 
-from sample_app.views import index
+from swing_admin.views import index, NewsViewSet, DatesViewSet
+
+router = DefaultRouter()
+router.register(r'news', NewsViewSet)
+router.register(r'dates', DatesViewSet)
 
 urlpatterns = [
+
+    url(r'^jet/', include('jet.urls', 'jet')),  # Django JET URLS
+    url(r'^jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET dashboard URLS
     url(r'^admin/', admin.site.urls),
-    url(r'^$', index),
+
+    url(r'^', include(router.urls)),
+    url(r'^froala_editor/', include('froala_editor.urls')),
+
+
 ]
 
 if settings.DEBUG:
