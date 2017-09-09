@@ -8,6 +8,11 @@ ALLOWED_HOSTS = [
     '0.0.0.0',
 ]
 
+INSTALLED_APPS += [
+    # debugging
+    'debug_toolbar',
+]
+
 DEBUG_TOOLBAR_PANELS = (
     'debug_toolbar.panels.versions.VersionsPanel',
     'debug_toolbar.panels.timer.TimerPanel',

@@ -21,7 +21,6 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     'admin.schwingschlampen.de',
-    
 ]
 AUTH_USER_MODEL = 'users.User'
 
@@ -43,9 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    # debugging
-    'debug_toolbar',
 
     # 3rd party apps
     'axes',
