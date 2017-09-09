@@ -21,6 +21,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     'admin.swingschlampen.de',
+    'localhost',
 ]
 AUTH_USER_MODEL = 'users.User'
 
