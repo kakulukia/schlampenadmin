@@ -50,7 +50,6 @@ INSTALLED_APPS = [
     'compressor',
     'django_extensions',
     'django_secrets',
-    'livereload',
     'raven.contrib.django.raven_compat',
     'rest_framework',
 ]

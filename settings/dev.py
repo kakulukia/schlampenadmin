@@ -11,6 +11,7 @@ ALLOWED_HOSTS = [
 INSTALLED_APPS += [
     # debugging
     'debug_toolbar',
+    'livereload',
 ]
 
 DEBUG_TOOLBAR_PANELS = (
