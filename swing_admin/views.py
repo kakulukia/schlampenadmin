@@ -18,5 +18,5 @@ class NewsViewSet(ModelViewSet):
 
 
 class DatesViewSet(ModelViewSet):
-    queryset = Dates.data.future()
+    queryset = Dates.data.all()
     serializer_class = DatesSerializer

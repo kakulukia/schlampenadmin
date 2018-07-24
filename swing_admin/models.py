@@ -32,7 +32,7 @@ class Dates(BaseModel):
     class Meta:
         verbose_name = 'Date'
         verbose_name_plural = 'Dates'
-        ordering = ['start']
+        ordering = ['-start']
 
     def __str__(self):
         return self.name
