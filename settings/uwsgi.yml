@@ -1,20 +1,20 @@
 uwsgi:
-        project: schlampenadmin
-        base: /home/andy
+    project: schlampenadmin
+    base: opt/www
 
-        master: true
-        processes: 5
-        vaccum: true
-        chmod-socket: 666
-        uid: www-data
-        gid: www-data
-        #plugins: python32
-        socket: %(base)/www/sockets/%(project).sock
-        #http: 0.0.0.0:3003
-        chdir: %(base)/www/%(project)
-        pythonpath: %(base)/www/%(project)
-        home: %(chdir)/.venv/
-        module: wsgi:application
-        #logto: %(base)/www/logs/%(project)-uwsgi.log
-        #logto2: %(base)/www/logs/%(project)-error.log
-        #touch-reload: SITE_DIR/application.py
+    master: true
+    processes: 5
+    vaccum: true
+    chmod-socket: 666
+    uid: www-data
+    gid: www-data
+    #plugins: python32
+    socket: /tmp/%(project).sock
+    # http: 0.0.0.0:3003
+    chdir: /%(base)/%(project)
+    pythonpath: /%(base)/%(project)
+    home: %(chdir)/.venv/
+    module: wsgi:application
+    #logto: %(base)/www/logs/%(project)-uwsgi.log
+    #logto2: %(base)/www/logs/%(project)-error.log
+    #touch-reload: SITE_DIR/application.py
